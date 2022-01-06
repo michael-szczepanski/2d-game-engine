@@ -15,6 +15,8 @@ public class Window {
     private String title;
     private long glfwWindow;
 
+    private float r, g, b, a;
+
     private static Window window = null;
 
     // Singleton class with private constructor initializing width, height and title.
@@ -22,6 +24,10 @@ public class Window {
         this.width = 1920;
         this.height = 1200;
         this.title = "Mario clone";
+        r = 1;
+        g = 1;
+        b = 1;
+        a = 1;
     }
 
     public static Window get() {
@@ -64,10 +70,14 @@ public class Window {
 
         // Create  the window
         glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL);
-
         if (glfwWindow == NULL) {
             throw new IllegalStateException("Failed to create the GLFW window");
         }
+
+        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
@@ -91,8 +101,9 @@ public class Window {
             // Poll events
             glfwPollEvents();
 
-            glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+            glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
+
             glfwSwapBuffers(glfwWindow);
         }
     }
