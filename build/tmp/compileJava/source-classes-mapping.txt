@@ -2,14 +2,14 @@ jade/KeyListener.java
  jade.KeyListener
 jade/MouseListener.java
  jade.MouseListener
-jade/Scene.java
- jade.Scene
 util/Time.java
  util.Time
-jade/LevelScene.java
- jade.LevelScene
+jade/Scene.java
+ jade.Scene
 Main.java
  Main
+jade/LevelScene.java
+ jade.LevelScene
 jade/Window.java
  jade.Window
 jade/LevelEditorScene.java
