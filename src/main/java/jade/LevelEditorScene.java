@@ -1,5 +1,6 @@
 package jade;
 
+import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import renderer.Shader;
 
@@ -16,10 +17,10 @@ public class LevelEditorScene extends Scene {
 
     private float[] vertexArray = {
             // position             // color
-             0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f, 1.0f, // Bottom right (red)    (0)
-            -0.5f,  0.5f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f, // Top left     (green)  (1)
-             0.5f,  0.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f, // Top right    (blue)   (2)
-            -0.5f, -0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 1.0f, // Bottom left  (yellow) (3)
+            100.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f, 1.0f, // Bottom right (red)    (0)
+            -0.5f,  100.5f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f, // Top left     (green)  (1)
+            100.5f,  100.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f, // Top right    (blue)   (2)
+            0.5f, 0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 1.0f, // Bottom left  (yellow) (3)
     };
 
     // IMPORTANT: Must be in counter-clockwise order
@@ -43,12 +44,13 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void init() {
+        this.camera = new Camera(new Vector2f());
         defaultShader = new Shader("assets/shaders/default.glsl");
         defaultShader.compile();
 
-        // ==========================================================
+        // ============================================================
         // Generate VAO, VBO, and EBO buffer objects, and send to GPU
-        // ==========================================================
+        // ============================================================
         vaoID = glGenVertexArrays();
         glBindVertexArray(vaoID);
 
@@ -83,7 +85,11 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void update(float dt) {
+        camera.position.x -=dt * 50.0f;
+
         defaultShader.use();
+        defaultShader.uploadMat4f("uProjection", camera.getProjectionMatrix());
+        defaultShader.uploadMat4f("uView", camera.getViewMatrix());
         // Bind the VAO we'll be using
         glBindVertexArray(vaoID);
 
