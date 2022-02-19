@@ -7,10 +7,20 @@ public class GameObject {
 
     private String name;
     private List<Component> components;
+    public Transform transform;
 
     public GameObject(String name) {
+        init(name, new ArrayList<>(), new Transform());
+    }
+
+    public GameObject(String name, Transform transform) {
+        init(name, new ArrayList<>(), transform);
+    }
+
+    private void init(String name, List<Component> components, Transform transform) {
         this.name = name;
-        this.components = new ArrayList<>();
+        this.components = components;
+        this.transform = transform;
     }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {

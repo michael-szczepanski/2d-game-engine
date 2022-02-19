@@ -26,7 +26,7 @@ public class Window {
     // Singleton class with private constructor initializing width, height and title.
     private Window() {
         this.width = 1920;
-        this.height = 1200;
+        this.height = 1080;
         this.title = "Mario clone";
         r = 1;
         g = 1;
@@ -58,6 +58,10 @@ public class Window {
         }
 
         return Window.window;
+    }
+
+    public static Scene getScene() {
+        return get().currentScene;
     }
 
     public void run() {
