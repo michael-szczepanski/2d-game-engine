@@ -25,11 +25,11 @@ public class Window {
     // Singleton class with private constructor initializing width, height and title.
     private Window() {
         this.width = 1920;
-        this.height = 1080;
+        this.height = 1200;
         this.title = "Mario clone";
-        r = 1;
-        g = 1;
-        b = 1;
+        r = 0;
+        g = 0;
+        b = 0;
         a = 1;
     }
 
@@ -91,7 +91,7 @@ public class Window {
         glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-        glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
+        glfwWindowHint(GLFW_MAXIMIZED, GLFW_FALSE);
 
         // Create  the window
         glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL);
