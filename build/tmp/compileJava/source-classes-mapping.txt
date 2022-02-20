@@ -22,19 +22,19 @@ Main.java
  Main
 jade/Scene.java
  jade.Scene
-components/FontRenderer.java
- components.FontRenderer
-renderer/Renderer.java
- renderer.Renderer
-jade/GameObject.java
- jade.GameObject
-components/SpriteRenderer.java
- components.SpriteRenderer
-renderer/RenderBatch.java
- renderer.RenderBatch
 jade/LevelScene.java
  jade.LevelScene
+jade/GameObject.java
+ jade.GameObject
+renderer/RenderBatch.java
+ renderer.RenderBatch
+components/FontRenderer.java
+ components.FontRenderer
 jade/Window.java
  jade.Window
+components/SpriteRenderer.java
+ components.SpriteRenderer
+renderer/Renderer.java
+ renderer.Renderer
 jade/LevelEditorScene.java
  jade.LevelEditorScene
