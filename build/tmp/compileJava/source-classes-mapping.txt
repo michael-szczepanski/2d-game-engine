@@ -14,27 +14,31 @@ renderer/Texture.java
  renderer.Texture
 renderer/Shader.java
  renderer.Shader
-jade/Component.java
- jade.Component
 jade/Transform.java
  jade.Transform
-Main.java
- Main
-jade/Scene.java
- jade.Scene
-jade/LevelScene.java
- jade.LevelScene
-jade/GameObject.java
- jade.GameObject
-renderer/RenderBatch.java
- renderer.RenderBatch
-components/FontRenderer.java
- components.FontRenderer
-jade/Window.java
- jade.Window
-components/SpriteRenderer.java
- components.SpriteRenderer
-renderer/Renderer.java
- renderer.Renderer
 jade/LevelEditorScene.java
  jade.LevelEditorScene
+renderer/Renderer.java
+ renderer.Renderer
+jade/Component.java
+ jade.Component
+components/FontRenderer.java
+ components.FontRenderer
+jade/Scene.java
+ jade.Scene
+jade/GameObject.java
+ jade.GameObject
+components/SpriteRenderer.java
+ components.SpriteRenderer
+renderer/RenderBatch.java
+ renderer.RenderBatch
+jade/LevelScene.java
+ jade.LevelScene
+Main.java
+ Main
+jade/Window.java
+ jade.Window
+jade/ImGuiLayer.java
+ jade.ImGuiLayer
+ jade.ImGuiLayer$1
+ jade.ImGuiLayer$2
