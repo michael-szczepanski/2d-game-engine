@@ -1,7 +1,5 @@
 package jade;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
@@ -23,8 +21,11 @@ public class LevelEditorScene extends Scene {
     @Override
     public void init() {
         loadResources();
-
         this.camera = new Camera(new Vector2f());
+
+        if (levelLoaded) {
+            return;
+        }
 
         sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
 
@@ -42,13 +43,6 @@ public class LevelEditorScene extends Scene {
         obj2SpriteRenderer.setSprite(obj2Sprite);
         obj2.addComponent(obj2SpriteRenderer);
         this.addGameObjectToScene(obj2);
-
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-
-        String serialized = gson.toJson(1);
-        int one = gson.fromJson(serialized, int.class);
     }
 
     private void loadResources() {

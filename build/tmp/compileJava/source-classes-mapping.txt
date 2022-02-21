@@ -16,29 +16,33 @@ jade/MouseListener.java
  jade.MouseListener
 components/Spritesheet.java
  components.Spritesheet
-Main.java
- Main
-renderer/RenderBatch.java
- renderer.RenderBatch
-jade/LevelScene.java
- jade.LevelScene
+jade/GameObjectDeserializer.java
+ jade.GameObjectDeserializer
+jade/Component.java
+ jade.Component
+jade/ComponentDeserializer.java
+ jade.ComponentDeserializer
 components/FontRenderer.java
  components.FontRenderer
-jade/ImGuiLayer.java
- jade.ImGuiLayer
- jade.ImGuiLayer$1
- jade.ImGuiLayer$2
+renderer/Renderer.java
+ renderer.Renderer
 jade/GameObject.java
  jade.GameObject
 components/SpriteRenderer.java
  components.SpriteRenderer
-jade/Scene.java
- jade.Scene
-jade/Component.java
- jade.Component
-renderer/Renderer.java
- renderer.Renderer
+renderer/RenderBatch.java
+ renderer.RenderBatch
+jade/LevelScene.java
+ jade.LevelScene
+Main.java
+ Main
 jade/Window.java
  jade.Window
+jade/Scene.java
+ jade.Scene
 jade/LevelEditorScene.java
  jade.LevelEditorScene
+jade/ImGuiLayer.java
+ jade.ImGuiLayer
+ jade.ImGuiLayer$1
+ jade.ImGuiLayer$2
