@@ -68,7 +68,6 @@ public abstract class Scene {
     }
 
     public void saveExit() {
-        // TODO: prevent the file from creating multiple copies of previous objects
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -107,5 +106,6 @@ public abstract class Scene {
             }
         }
         this.levelLoaded = true;
+        System.out.println("Level loaded");
     }
 }
